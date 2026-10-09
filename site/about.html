@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aunty.ai — Your personal coding assistant</title>
+  <meta name="description" content="Aunty.ai is a desktop AI coding companion that works inside your own codebase, with OpenRouter and local Ollama models.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/">aunty<span>.ai</span></a>
+    <nav>
+      <a href="/">Web app</a>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a class="btn btn-small" href="https://github.com/23Q91A67F8-ai/Aunty-AI">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Web &amp; desktop · v1.0.0-preview</p>
+      <h1>Your personal coding assistant,<br><em>inside your own codebase.</em></h1>
+      <p class="lede">Aunty.ai brings model access, workspace context, session history and local project awareness into one focused desktop workflow — no more pasting snippets into a generic chat box.</p>
+      <div class="cta">
+        <a class="btn" href="/">Open the web app</a>
+        <a class="btn btn-ghost" href="#install">Install desktop app</a>
+              </div>
+
+      <div class="window" aria-hidden="true">
+        <div class="window-bar"><i></i><i></i><i></i><span>aunty.ai — ~/projects/shop-api</span></div>
+        <div class="window-body">
+          <aside>
+            <b>Sessions</b>
+            <p class="active">Fix checkout bug</p>
+            <p>Refactor auth module</p>
+            <p>Explain caching layer</p>
+          </aside>
+          <div class="chat">
+            <p class="you">Why does <code>apply_discount()</code> return a negative total?</p>
+            <p class="aunty">The discount is subtracted twice — once in <code>cart.py:42</code> and again in <code>checkout.py:88</code>. Remove the second call and add a guard so totals never drop below zero…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Built for real project work</h2>
+      <div class="grid">
+        <article><h3>Workspace-aware</h3><p>Open a project folder and keep the relevant code in context — up to full-project context for large codebases.</p></article>
+        <article><h3>Your choice of model</h3><p>On the web, pick Claude, GPT or Gemini with no API key. On desktop, use OpenRouter-hosted models or run fully local with Ollama.</p></article>
+        <article><h3>Session history</h3><p>Every conversation is saved, so you can pick up a task right where you left off.</p></article>
+        <article><h3>Image attachments</h3><p>Drop in screenshots, diagrams and UI references for visual debugging help.</p></article>
+        <article><h3>Voice output</h3><p>Optionally have answers read aloud while you keep your eyes on the code.</p></article>
+        <article><h3>Private project context</h3><p>Project files are read in your browser and sent only with the questions you ask. The desktop app keeps everything on your machine.</p></article>
+      </div>
+    </section>
+
+    <section id="install" class="install">
+      <h2>Install the desktop app</h2>
+      <p>Aunty.ai is a Python desktop app built with PySide6. It runs on Windows, macOS and Linux.</p>
+      <ol>
+        <li><span>Clone the repository</span><pre><code>git clone https://github.com/23Q91A67F8-ai/Aunty-AI.git
+cd Aunty-AI</code></pre></li>
+        <li><span>Create a virtual environment</span><pre><code>python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate</code></pre></li>
+        <li><span>Install dependencies</span><pre><code>pip install -r requirements.txt</code></pre></li>
+        <li><span>Set your OpenRouter API key (skip if using Ollama)</span><pre><code>export OPENROUTER_API_KEY="your_api_key_here"</code></pre></li>
+        <li><span>Run the app</span><pre><code>python src/ui.py</code></pre></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>aunty.ai · MIT licensed · <a href="https://github.com/23Q91A67F8-ai/Aunty-AI">GitHub</a></p>
+  </footer>
+</body>
+</html>
