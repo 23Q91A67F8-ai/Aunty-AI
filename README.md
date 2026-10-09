@@ -44,7 +44,18 @@ Aunty.ai is configured to work with:
 - OpenRouter-hosted Llama models
 - Local Ollama models
 
-## Installation
+## Use it on the web
+
+Aunty.ai also runs in the browser at https://singular-croquembouche-9035e4.netlify.app. You don't need to install anything or set an API key.
+
+- Choose Claude, GPT or Gemini (routed through Netlify AI Gateway)
+- Click **Open folder** to load a project. Files are read in your browser and sent as context with your messages
+- Attach or paste screenshots, and turn on **Voice** to hear replies read aloud
+- Chats are saved per browser in Netlify Database, so you can come back to them later
+
+The web app lives in `site/` (front end), `netlify/functions/` (chat and session APIs) and `db/` (database schema).
+
+## Installation (desktop app)
 
 ### 1) Clone the repository
 

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>aunty.ai — Your personal coding assistant</title>
+  <meta name="description" content="aunty.ai in your browser: a workspace-aware AI coding assistant with saved sessions, project context, image input and voice output.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-head">
+      <a class="brand" href="/about">aunty<span>.ai</span></a>
+      <button class="icon-btn only-mobile" id="closeSidebar" aria-label="Close sidebar">✕</button>
+    </div>
+
+    <button class="btn new-chat" id="newChat">+ New chat</button>
+
+    <div class="side-section">
+      <h4>Sessions</h4>
+      <ul class="sessions" id="sessions"><li class="empty">No chats yet</li></ul>
+    </div>
+
+    <div class="side-section workspace">
+      <h4>Workspace</h4>
+      <p class="ws-name" id="wsName">No folder open</p>
+      <p class="ws-meta" id="wsMeta">Open a project folder to give aunty its code as context. Files stay in your browser until you send a message.</p>
+      <div class="ws-actions">
+        <label class="btn btn-ghost btn-small">
+          Open folder
+          <input type="file" id="folderInput" webkitdirectory directory multiple hidden>
+        </label>
+        <button class="btn btn-ghost btn-small" id="clearWs" hidden>Close</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="includeContext" checked disabled> Include project context</label>
+    </div>
+
+    <p class="side-foot"><a href="/about">About &amp; desktop app</a></p>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="openSidebar" aria-label="Open sidebar">☰</button>
+      <h2 class="chat-title" id="chatTitle">New chat</h2>
+      <div class="top-controls">
+        <select id="modelSelect" aria-label="Model"></select>
+        <label class="toggle"><input type="checkbox" id="voiceToggle"> Voice</label>
+      </div>
+    </header>
+
+    <section class="messages" id="messages">
+      <div class="welcome" id="welcome">
+        <p class="eyebrow">aunty.ai</p>
+        <h1>What are we building today?</h1>
+        <p class="lede">Open a project folder, pick a model and ask for explanations, refactors or debugging help.</p>
+        <div class="suggestions">
+          <button data-prompt="Give me a tour of this codebase: the main modules, how they fit together, and where to start reading.">Tour this codebase</button>
+          <button data-prompt="Review this project for bugs and risky code. List the most important issues first, with file paths.">Find bugs</button>
+          <button data-prompt="Suggest a refactor that would make this project easier to maintain, and show the key code changes.">Suggest a refactor</button>
+          <button data-prompt="Explain the difference between a process and a thread, with a short Python example.">Ask anything</button>
+        </div>
+      </div>
+    </section>
+
+    <form class="composer" id="composer">
+      <div class="attachments" id="attachments" hidden></div>
+      <div class="composer-row">
+        <label class="icon-btn" title="Attach images" aria-label="Attach images">
+          📎<input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden>
+        </label>
+        <textarea id="prompt" rows="1" placeholder="Ask aunty about your code…  (Enter to send, Shift+Enter for a new line)"></textarea>
+        <button class="btn" type="submit" id="sendBtn">Send</button>
+        <button class="btn btn-ghost" type="button" id="stopBtn" hidden>Stop</button>
+      </div>
+      <p class="status" id="status"></p>
+    </form>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
