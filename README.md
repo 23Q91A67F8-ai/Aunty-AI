@@ -1,69 +1,59 @@
-# Aunty.ai — Your Personal Coding Assistant
+# Aunty.ai
 
-Aunty.ai is a desktop AI coding assistant for developers who want a focused, workspace-aware environment for building and debugging software. Instead of treating AI like a generic chat box, it keeps the model grounded in your project, session history, and coding workflow.
+Your personal coding assistant for real project work.
 
-The app is designed to help with multi-step software tasks: reading and explaining code, refactoring files, answering project-level questions, attaching screenshots, and working with large codebases through a local workspace.
-
-## Features
-
-- Desktop interface built with PySide6
-- OpenRouter integration for remote model access
-- Local Ollama support for self-hosted inference
-- Workspace folder selection for project-aware prompts
-- Session-based chat history
-- Full-project context support for large codebases
-- Image attachment support for visual references
-- Optional voice output via text-to-speech
-- Local storage for chats and project context
+Aunty.ai is a desktop AI coding companion built for developers who want to work inside their own codebase instead of chatting in a generic prompt box. It brings model access, workspace context, session history, and local project awareness into one focused desktop workflow.
 
 ## Why Aunty.ai
 
-A lot of AI coding tools feel like disconnected chat windows. Aunty.ai is designed to behave more like a real coding workspace:
+Most AI coding tools feel like disconnected chat interfaces. Aunty.ai is designed to feel more like a real coding workspace:
 
-- you open your project folder
-- choose your model
-- keep a conversation history for the task
-- ask the assistant to work inside that codebase
-- include large context when needed
+- open your project folder
+- choose a model
+- continue a chat session
+- ask for explanations, refactors, and debugging help
+- keep the project context relevant to the task
 
-This makes it useful for real development workflows, not just one-off Q&A.
+## Features
+
+- Desktop app built with PySide6
+- OpenRouter integration for managed model access
+- Local Ollama support for self-hosted setups
+- Workspace-aware coding assistant
+- Session-based chat history
+- Full-project context support for large codebases
+- Image attachments for visual references
+- Optional voice output
+- Local storage for conversations and project context
+
+## How it works
+
+1. Open a project folder in the app.
+2. Select a provider and model.
+3. Start a chat session.
+4. Ask for code explanations, refactors, architecture help, or debugging support.
+5. Optionally include project context or attach images for visual input.
+
+The goal is simple: make AI useful in a real software workflow, not just as a one-off chatbot.
 
 ## Supported models
 
-The app is configured to work with:
+Aunty.ai is configured to work with:
 
 - 0x Alpha via OpenRouter
 - OpenRouter-hosted Llama models
 - Local Ollama models
 
-## Tech stack
-
-- Python
-- PySide6
-- OpenAI-compatible API access
-- SQLite for local session storage
-- pyttsx3 for voice output
-
-## Repository structure
-
-- `src/ui.py` — main desktop application window
-- `src/config.py` — app configuration and model settings
-- `src/api_client.py` — OpenRouter and Ollama API logic
-- `src/storage.py` — session and chat persistence
-- `src/workspace.py` — workspace/project context handling
-- `src/tts.py` — text-to-speech support
-- `requirements.txt` — Python dependencies
-
 ## Installation
 
-1. Clone the repository:
+### 1) Clone the repository
 
 ```bash
 git clone https://github.com/23Q91A67F8-ai/Aunty-AI.git
 cd Aunty-AI
 ```
 
-2. Create and activate a virtual environment:
+### 2) Create a virtual environment
 
 ```bash
 python -m venv .venv
@@ -77,13 +67,15 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-3. Install dependencies:
+### 3) Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Set your OpenRouter API key if you are using OpenRouter:
+### 4) Set your API key
+
+If you are using OpenRouter:
 
 ```bash
 export OPENROUTER_API_KEY="your_api_key_here"
@@ -95,34 +87,37 @@ On Windows PowerShell:
 $env:OPENROUTER_API_KEY="your_api_key_here"
 ```
 
-## Running the app
+### 5) Run the app
 
 ```bash
 python src/ui.py
 ```
 
-## Usage
+## Project structure
 
-- Open a project folder from the app
-- Create a new chat session
-- Select a model/provider
-- Ask the assistant to explain, refactor, debug, or generate code
-- Enable project context when you want the model to reason over your full codebase
-- Attach images when you want visual inputs in the conversation
-- Turn on voice if you want spoken responses
+```text
+Aunty-AI/
+├── src/
+│   ├── api_client.py
+│   ├── config.py
+│   ├── storage.py
+│   ├── tts.py
+│   ├── ui.py
+│   └── workspace.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── llms.txt
+```
 
 ## Typical use cases
 
-- codebase understanding and explanation
-- bug fixing and debugging
-- refactoring large files or modules
-- generating new code based on project context
-- asking architecture or implementation questions
-- working with screenshots or UI references
-
-## Notes
-
-This project is intentionally focused on practical development workflows. The goal is to provide a local, project-aware assistant that feels more like a coding companion than a basic chatbot.
+- understand an unfamiliar codebase
+- debug failing logic
+- refactor or rewrite files safely
+- ask architecture and implementation questions
+- generate code based on project context
+- work with screenshots and UI references
 
 ## License
 
